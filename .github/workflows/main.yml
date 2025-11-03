@@ -13,9 +13,5 @@ jobs:
         python-version: "3.9"
     - name: Install packages
       run: pip install -r requirements.txt
-    - name: Run tests
-      run: python manage.py test
-      continue-on-error: true 
     - name: Run git bisect
-      if: failure()
       run: python myscript.py <badhash> <goodhash>
